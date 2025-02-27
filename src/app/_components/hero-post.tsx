@@ -23,24 +23,27 @@ export function HeroPost({
 }: Props) {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
-        <CoverImage title={title} src={coverImage} slug={slug} />
-      </div>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
-        <div>
-          <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
-            <Link href={`/posts/${slug}`} className="hover:underline">
-              {title}
-            </Link>
-          </h3>
-          <div className="mb-4 md:mb-0 text-lg">
-            <DateFormatter dateString={date} />
+      <div className="w-full h-full border-2 border-black rounded-md overflow-hidden rounded-base shadow-[4px_4px_0px_rgba(0,0,0,1)] border-border bg-main font-base bg-main shadow-shadow bg-[#FFC29F] dark:bg-[#DDAAFF] text-slate-950 dark:text-slate-950">
+        <div className="">
+          {/*<CoverImage title={title} src={coverImage} slug={slug} />*/}
+        </div>
+        <div className="mt-8 md:grid md:grid-cols-2 md:gap-x-8 lg:gap-x-8 mb-16 md:mb-32">
+          <div>
+            <h3 className="ml-6 mb-4 font-mono text-4xl lg:text-5xl leading-tight">
+              <Link href={`/posts/${slug}`} className="hover:underline">
+                {title}
+              </Link>
+            </h3>
+            <div className="ml-6 mb-4 md:mb-0 text-lg">
+              <DateFormatter dateString={date} />
+            </div>
+          </div>
+          <div>
+            <p className="mr-6 text-base leading-relaxed ml-4">{excerpt}</p>
+            <Avatar name={author.name} picture={author.picture} />
           </div>
         </div>
-        <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
-        </div>
+
       </div>
     </section>
   );
